@@ -133,15 +133,17 @@
     #hero .hero-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
     /* Self-contained button primitives — works everywhere */
     .btn-primary, .btn-secondary {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px; border-radius: 50px;
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 7px; padding: 12px 24px; border-radius: 50px;
       font-weight: 500; font-size: 0.9rem; line-height: 1;
       transition: all var(--transition); white-space: nowrap;
-      text-decoration: none;
+      text-decoration: none; box-sizing: border-box;
     }
+    .btn-primary i, .btn-secondary i { font-size: 0.9rem; line-height: 1; display: inline-flex; align-items: center; }
     .btn-primary {
       background: var(--accent); color: #fff !important;
-      box-shadow: 0 4px 20px var(--accent-glow); border: none;
+      box-shadow: 0 4px 20px var(--accent-glow);
+      border: 1px solid transparent;
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px var(--accent-glow); opacity: 1; }
     .btn-secondary {
