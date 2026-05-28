@@ -242,10 +242,31 @@
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 48px 32px; max-width: 480px; margin: 0 auto;
     }
-    #resume .resume-card i { font-size: 2.8rem; color: var(--accent); margin-bottom: 20px; display: block; }
+    #resume .resume-card .resume-icon { margin-bottom: 20px; display: block; }
+    #resume .resume-card .resume-icon svg { width: 48px; height: 48px; }
     #resume .resume-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
     #resume .resume-card p { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 24px; }
     .resume-actions { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .resume-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 12px 28px; border-radius: 50px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 500; font-size: 0.9rem; line-height: 1;
+      transition: all 0.25s ease; white-space: nowrap;
+      text-decoration: none; cursor: pointer;
+    }
+    .resume-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .resume-btn.primary {
+      background: var(--accent); color: #fff;
+      border: 1px solid transparent;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+    .resume-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px var(--accent-glow); }
+    .resume-btn.secondary {
+      background: var(--bg-card); color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .resume-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ── Contact ── */
     #contact { text-align: center; padding-bottom: 80px; }
@@ -476,12 +497,26 @@
   <section id="resume">
     <span class="section-label reveal">Resume</span>
     <div class="resume-card reveal">
-      <i class="fa-solid fa-file-pdf"></i>
+      <span class="resume-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+      </span>
       <h3>Download My CV</h3>
       <p>Full resume with detailed experience, education, and project history.</p>
       <div class="resume-actions">
-        <a href="cv.pdf" class="btn-primary" download><i class="fa-solid fa-download"></i> Download PDF</a>
-        <a href="cv.pdf" class="btn-secondary" target="_blank"><i class="fa-solid fa-eye"></i> View</a>
+        <a href="cv.pdf" class="resume-btn primary" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <a href="cv.pdf" class="resume-btn secondary" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          View
+        </a>
       </div>
     </div>
   </section>
